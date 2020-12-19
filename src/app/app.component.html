@@ -1,0 +1,84 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Hello World</h1>
+    </div>
+  </div>
+</div> -->
+<!-- //интерполяция -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ title }}</h1>
+      <h1>10+20 = {{10+20}}</h1>
+      <h1>{{ myNumber }}</h1>
+      <h1>{{ hello() }}</h1>
+      <h1>Флаг {{ flag === true ? 'вкл': 'выкл' }}</h1>
+      <h1>{{ title.toUpperCase() }}</h1>
+    </div>
+  </div>
+</div> -->
+<!-- Привязка свойств -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" [disabled] = "!buttonEnabled" >Knopka</button>
+    </div>
+  </div>
+</div>
+<hr/> -->
+<!-- Привязка событий -->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="myblock"(mousemove)="getCoords($event)" ></div>
+      <p>X: {{ blockX }} Y: {{ blockY }}</p>
+    </div>
+  </div>
+</div> -->
+<!-- Привязка в оба направления -->
+<!-- <div class="container">
+  <div class="form-group">
+    <input type="text" class="form-control"[(ngModel)]="inputValue" />
+  </div>
+  <p>{{ inputValue }}</p>
+</div> -->
+
+<!-- Локальная референция -->
+<!-- <div class="container">
+  <div class="form-group">
+    <input type="text" class="form-control" #someInput />
+  </div>
+  <button class="btn btn-primary"(click)="getData(someInput )">Knopka</button>
+</div> -->
+<!-- <app-myfirst></app-myfirst> -->
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-12">
+<h1>{{ title }}</h1>
+  </div>
+</div>
+<app-addform-worker
+(addWorker)="onAddWorker($event)"></app-addform-worker>
+<app-table-workers 
+[title]="'Программисты'"
+[workers] ="getByType(myWorkerType.programmer)"
+(deleteWorker)="onDeleteWorker($event)"
+></app-table-workers>
+<app-table-workers 
+[title]="'Дизайнеры'"
+[workers] ="getByType(myWorkerType.designer)"
+(deleteWorker)="onDeleteWorker($event)"
+></app-table-workers>
+<app-table-workers 
+[title]="'Рекламщики'"
+[workers] ="getByType(myWorkerType.copywriter)"
+(deleteWorker)="onDeleteWorker($event)"
+></app-table-workers>
+<app-table-workers 
+[title]="'Менеджеры'"
+[workers] ="getByType(myWorkerType.manager)"
+(deleteWorker)="onDeleteWorker($event)"
+></app-table-workers>
+
+</div>
